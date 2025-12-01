@@ -17,17 +17,20 @@ public class Environment {
     void define(String name, Object value) {
         variables.put(name, value);
     }
-
+    //recursion probably with enclosing
     Object get(String name) {
         // TODO: Return variable if it exists in our current environment, otherwise, check enclosing, otherwise,
         //  return null (it does not exist)
+        // shannon
 
         return null;
     }
 
     // Assign - Replace the value of an existing variable
+    // recursion
     void assign(Token name, Object value) {
         // TODO: If the variable exists, then we can assign, otherwise we have an error
+        //Shannon
 
         // TODO: If we don't have it in our current environment, try assigning in the enclosing environment
 
