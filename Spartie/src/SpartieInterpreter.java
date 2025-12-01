@@ -35,12 +35,15 @@ public class SpartieInterpreter {
     }
 
     // Statement Implementation
+    // actually write while loop
     private void interpretWhileStatement(Statement.WhileStatement statement) {
         // TODO: Evaluate the while statement based on the condition
+        //Mollie
     }
 
     private void interpretIfStatement(Statement.IfStatement statement) {
         // TODO: Evaluate the condition and then execute the appropriate branch
+        //Thao
     }
 
     private void interpretBlockStatement(Statement.BlockStatement statement) {
@@ -99,16 +102,18 @@ public class SpartieInterpreter {
         // If we make it this far, we need to evaluate right
         return interpret(logicalExpression.right);
     }
-
+    
     private Object interpretAssign(Expression.AssignmentExpression expression) {
         // TODO: Interpret the expression for the assignment and then assign it to our global environment,
         //  then return the value
+        //Thao
 
         return null;
     }
 
     private Object interpretVariable(Expression.VariableExpression expression) {
         // TODO: Return the value from our global environment
+        //Whoever finishes first
         return null;
     }
 
