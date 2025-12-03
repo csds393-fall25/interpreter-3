@@ -38,12 +38,20 @@ public class SpartieInterpreter {
     // actually write while loop
     private void interpretWhileStatement(Statement.WhileStatement statement) {
         // TODO: Evaluate the while statement based on the condition
-        //Mollie
+         while ((Boolean) interpret(statement.condition)){
+            interpret(statement.body);
+         }
+
     }
 
     private void interpretIfStatement(Statement.IfStatement statement) {
         // TODO: Evaluate the condition and then execute the appropriate branch
-        //Thao
+        if((Boolean) interpret(statement.condition)){
+            interpret(statement.thenBranch);
+        }
+        else{
+            interpret(statement.elseBranch);
+        }
     }
 
     private void interpretBlockStatement(Statement.BlockStatement statement) {
@@ -106,15 +114,16 @@ public class SpartieInterpreter {
     private Object interpretAssign(Expression.AssignmentExpression expression) {
         // TODO: Interpret the expression for the assignment and then assign it to our global environment,
         //  then return the value
-        //Thao
+        Object exp = interpret(expression.value);
+        System.out.println(exp);
+        globalEnvironment.assign(expression.name, exp);
 
-        return null;
+        return exp;
     }
 
     private Object interpretVariable(Expression.VariableExpression expression) {
         // TODO: Return the value from our global environment
-        //Whoever finishes first
-        return null;
+        return globalEnvironment.get(expression.name.text);
     }
 
     private Object interpretLiteral(Expression.LiteralExpression expression) {

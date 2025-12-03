@@ -26,7 +26,6 @@ public class Environment {
         if(enclosing != null) {
             return enclosing.get(name);
         }
-
         return null;
     }
 
@@ -37,15 +36,12 @@ public class Environment {
         //Shannon
         if(variables.containsKey(name.text)) {
             variables.put(name.text, value);
-        }
-
-        // TODO: If we don't have it in our current environment, try assigning in the enclosing environment
-        if(enclosing != null) {
+        } else if(enclosing != null) {
             enclosing.assign(name, value);
+        } else {
+            // Exit on error if we get this far since the variable is undefined
+            System.err.println("Undefined variable: " + name.text);
+            System.exit(ErrorCode.INTERPRET_ERROR);
         }
-
-        // Exit on error if we get this far since the variable is undefined
-        System.err.println("Undefined variable: " + name.text);
-        System.exit(ErrorCode.INTERPRET_ERROR);
     }
 }

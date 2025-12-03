@@ -1,1 +1,7 @@
-// You got this!
+  var i = 7;
+  if (i == 8) {
+    print "8 is my favorite number!";
+  }
+  else{
+    print "boooo";
+  }
