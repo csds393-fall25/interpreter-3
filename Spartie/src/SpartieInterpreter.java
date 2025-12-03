@@ -115,7 +115,6 @@ public class SpartieInterpreter {
         // TODO: Interpret the expression for the assignment and then assign it to our global environment,
         //  then return the value
         Object exp = interpret(expression.value);
-        System.out.println(exp);
         globalEnvironment.assign(expression.name, exp);
 
         return exp;
