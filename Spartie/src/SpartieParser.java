@@ -76,10 +76,21 @@ public class SpartieParser {
         consume(TokenType.RIGHT_PAREN, "Expect ')' after for condition.");
         Statement body = statement();
 
-        // TODO: We have the initializer, we have the condition, we have the increment. Take those components
-        //  and convert into while loop. Hint: Build a block statement and then a while statement using the condition.
-        // Mollie
-        return body;
+        // desugaring for loop -> while loop
+        // add increment statement after the for loop body
+        body = new Statement.BlockStatement(
+            Arrays.asList(body, new Statement.ExpressionStatement(increment))
+        );
+
+        // create while loop with condition 
+        Statement whileLoop = new Statement.WhileStatement(condition, body);
+
+        // initializer goes before everything
+        if (initializer != null) {
+            return new Statement.BlockStatement(Arrays.asList(initializer, whileLoop));
+        }
+
+        return whileLoop;
 
     }
 
