@@ -1,3 +1,6 @@
+/*
+ * Completed by Shannon Griswold, Mollie Ackerman, Thao Nguyen
+*/
 import java.util.List;
 
 public class SpartieInterpreter {
