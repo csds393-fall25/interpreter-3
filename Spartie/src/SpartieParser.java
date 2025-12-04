@@ -1,3 +1,7 @@
+/*
+ * Completed by Shannon Griswold, Mollie Ackerman, Thao Nguyen
+*/
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
